@@ -1,4 +1,4 @@
 <?php
-get('/','AuthController@getLogin');
+get('/','WebController@getIndex');
 Route::controller('auth', 'AuthController');
 Route::controller('admin','AdminController');

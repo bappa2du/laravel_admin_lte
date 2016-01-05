@@ -1,0 +1,98 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+.form_wrapper{
+	border: 1px solid #B4CE45;
+	padding: 20px;
+	margin: 20px 0px;
+	background-color: #F8F8F8;
+}
+header h1{
+	font-weight:700;
+}
+header p{
+	color: rebeccapurple;
+	font-weight:700;
+}
+
+p{
+	font-size:16px;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+.note .denger{
+	color:red;
+	font-weight:600;
+}
+.note .color_icon{
+	color:#000;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form_headding{
+	text-align:center;
+}
+.form_headding h3 {
+    border-left: 2px solid #6D6D6D;
+    border-right: 2px solid #6D6D6D;
+    line-height: 1;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0px 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #6D6D6D;
+	margin: 50px 0px;
+}
+
+select.input-lg {
+    height: 42px;
+    line-height: 42px;
+}
+.input-lg {
+    height: 42px;
+    padding: 6px 15px;
+    font-size: 14px;
+    line-height: 1.33333;
+    border: 1px solid #B4CE45;
+    border-radius: 0px;
+}
+.submit_button {
+    text-align: center;
+    margin: 50px 0px 20px;
+}
+.submit_button .btn-default {
+    color: #333;
+    background-color: #CCC;
+    border-color: #CCC;
+    border-radius: 0px;
+    padding: 10px 40px;
+    font-weight: 700;
+}
+.submit_button .btn-default:hover,
+.submit_button .btn-primary:hover{
+	background-color: #C5EA27;
+	color: #fff;
+	border-color: #C5EA27;
+}
+.submit_button .btn-primary {
+    color: #fff;
+    background-color: #B4CE45;
+    border-color: #B4CE45;
+    border-radius: 0px;
+    padding: 10px 40px;
+    font-weight: 700;
+}
