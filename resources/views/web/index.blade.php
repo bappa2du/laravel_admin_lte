@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>btcl</title>
-    <base href="/">
+    <base href="">
 
     <!-- Bootstrap -->
     <link href="assets/web/css/bootstrap.min.css" rel="stylesheet">

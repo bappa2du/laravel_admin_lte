@@ -56,4 +56,11 @@ class AuthController extends Controller
 
     }
 
+    public function getLogout()
+    {
+        Auth::logout();
+        session_destroy();
+        return redirect()->acrion('WebController@getIndex');
+    }
+
 }
