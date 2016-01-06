@@ -32,9 +32,10 @@ class WebController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function postStore(Request $request)
 	{
-		//
+		$input = $request->all();
+		return ($input);
 	}
 
 	/**

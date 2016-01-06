@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>btcl</title>
-	<base href="/">
+    <base href="/">
+
     <!-- Bootstrap -->
     <link href="assets/web/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom css -->
@@ -55,26 +56,27 @@
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-    	<form role="form">
+    	<form role="form" method="post" action="{{ action('WebController@postStore') }}">
+    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form_headding"><h3>REGISTRANT INFORMATION</h3></div>
 			<!-- <hr class="colorgraph"> -->
 			<div class="row">
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Registrant Name *</label>
 					<div class="form-group">
-                        <input type="text" name="reg_name" id="reg_name" class="form-control input-lg" placeholder="">
+                        <input type="text" name="REGISTRANT[name]" id="reg_name" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Address *</label>
 					<div class="form-group">
-						<input type="text" name="address" id="address" class="form-control input-lg" placeholder="">
+						<input type="text" name="REGISTRANT[address]" id="address" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>City *</label>
 					<div class="form-group">
-						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="">
+						<input type="text" name="REGISTRANT[city]" id="city" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -82,19 +84,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Postal Code *</label>
 					<div class="form-group">
-                        <input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+                        <input type="number" name="REGISTRANT[postal]" id="number" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Email Address *</label>
 					<div class="form-group">
-						<input type="text" name="email" id="email" class="form-control input-lg" placeholder="">
+						<input type="text" name="REGISTRANT[email]" id="email" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Phone *</label>
 					<div class="form-group">
-						<input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+						<input type="number" name="REGISTRANT[phone]" id="number" class="form-control input-lg" placeholder="Phone No">
 					</div>
 				</div>
 			</div>
@@ -102,12 +104,12 @@
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<label>Fax *</label>
 					<div class="form-group">
-                        <input type="text" name="fax" id="fax" class="form-control input-lg" placeholder="">
+                        <input type="text" name="REGISTRANT[fax]" id="fax" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 				 <label>Registrant Category</label>
-					<select id="subject" name="subject" class="form-control input-lg">
+					<select id="subject" name="REGISTRANT[category]" class="form-control input-lg">
 						<option value="na" selected="">Choose One:</option>
 						<option value="service">Educational</option>
 						<option value="suggestions">Government</option>
@@ -122,7 +124,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<label>Registrant Status</label>
-					<select id="subject" name="subject" class="form-control input-lg">
+					<select id="subject" name="REGISTRANT[status]" class="form-control input-lg">
 						<option value="na" selected="">Choose One:</option>
 						<option value="service">Government</option>
 						<option value="suggestions">Autonomous</option>
@@ -132,7 +134,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 				 <label>Connection Type</label>
-					<select id="subject" name="subject" class="form-control input-lg">
+					<select id="subject" name="REGISTRANT[connection_type]" class="form-control input-lg">
 						<option value="na" selected="">Choose One:</option>
 						<option value="service">Permanent</option>
 						<option value="suggestions">Temporary</option>
@@ -141,8 +143,8 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 				<label style="margin-top:20px;">Connection Eligible for Discount
-				 <input type="checkbox" name="sex" value="yes" checked> Yes
-				<input type="checkbox" name="sex" value="no"> No
+				 <input type="checkbox" name="REGISTRANT[is_eligible]" value="1" checked> Yes
+				<input type="checkbox" value="0"> No
 				</label>
 				</div>
 			</div>
@@ -161,19 +163,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Full Name *</label>
 					<div class="form-group">
-                        <input type="text" name="full_name" id="full_name" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Administrative[full_name]" id="full_name" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Title/Occupation *</label>
 					<div class="form-group">
-						<input type="text" name="title" id="title" class="form-control input-lg" placeholder="">
+						<input type="text" name="Administrative[title]" id="title" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Organisation (if applicable) *</label>
 					<div class="form-group">
-						<input type="text" name="subject" id="subject" class="form-control input-lg" placeholder="">
+						<input type="text" name="Administrative[subject]" id="subject" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -181,19 +183,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Address *</label>
 					<div class="form-group">
-                        <input type="text" name="address" id="address" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Administrative[address]" id="address" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>City *</label>
 					<div class="form-group">
-						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="">
+						<input type="text" name="Administrative[city]" id="city" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Post Code *</label>
 					<div class="form-group">
-						<input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+						<input type="number" name="Administrative[number]" id="number" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -201,19 +203,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Email Address *</label>
 					<div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Administrative[email]" id="email" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Phone *</label>
 					<div class="form-group">
-						<input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+						<input type="number" name="Administrative[number]" id="number" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Fax *</label>
 					<div class="form-group">
-						<input type="fax" name="fax" id="fax" class="form-control input-lg" placeholder="">
+						<input type="fax" name="Administrative[fax]" id="fax" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -229,7 +231,7 @@
 					<div class="sig sigWrapper">
 					  <div class="typed"></div>
 					  <canvas class="pad" width="198" height="55"></canvas>
-					  <input type="hidden" name="output" class="output">
+					  <input type="hidden" name="Administrative[signature]" class="output">
 					</div>
 				<!-- <button type="submit">I accept the terms of this agreement.</button> -->
 				</div>
@@ -237,13 +239,13 @@
 			<div class="col-xs-12 col-sm-4 col-md-4">
 				<label>Date *</label>
 				<div class="form-group">
-					<input type="date" name="date" id="date" class="form-control input-lg" placeholder="">
+					<input type="date" name="Administrative[date]" id="date" class="form-control input-lg" placeholder="">
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4">
 				<label>Choose image *</label>
 				<div class="form-group">
-					<input id="file-input" type="file"/>
+					<input id="file-input" type="file" name="Administrative[image]" />
 				</div>
 			</div>
 		</div>
@@ -256,19 +258,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Full Name *</label>
 					<div class="form-group">
-                        <input type="text" name="full_name" id="full_name" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Technical[full_name]" id="full_name" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Title/Occupation *</label>
 					<div class="form-group">
-						<input type="text" name="title" id="title" class="form-control input-lg" placeholder="">
+						<input type="text" name="Technical[title]" id="title" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Organisation (if applicable) *</label>
 					<div class="form-group">
-						<input type="text" name="subject" id="subject" class="form-control input-lg" placeholder="">
+						<input type="text" name="Technical[subject]" id="subject" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -276,19 +278,19 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Address *</label>
 					<div class="form-group">
-                        <input type="text" name="address" id="address" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Technical[address]" id="address" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>City *</label>
 					<div class="form-group">
-						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="">
+						<input type="text" name="Technical[city]" id="city" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Post Code *</label>
 					<div class="form-group">
-						<input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+						<input type="number" name="Technical[number]" id="number" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
@@ -296,24 +298,116 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Email Address *</label>
 					<div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control input-lg" placeholder="">
+                        <input type="text" name="Technical[email]" id="email" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Phone *</label>
 					<div class="form-group">
-						<input type="number" name="number" id="number" class="form-control input-lg" placeholder="">
+						<input type="number" name="Technical[phone]" id="number" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<label>Fax *</label>
 					<div class="form-group">
-						<input type="fax" name="fax" id="fax" class="form-control input-lg" placeholder="">
+						<input type="fax" name="Technical[fax]" id="fax" class="form-control input-lg" placeholder="">
 					</div>
 				</div>
 			</div>
 		
 		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<div method="post" action="" class="sigPad">
+					<label>Signature *</label>
+					<ul class="sigNav">
+					  <li class="drawIt"><a href="#draw-it" >Draw It</a></li>
+					  <li class="clearButton"><a href="#clear">Clear</a></li>
+					</ul>
+					<div class="sig sigWrapper">
+					  <div class="typed"></div>
+					  <canvas class="pad" width="198" height="55"></canvas>
+					  <input type="hidden" name="Technical[signature]" class="output">
+					</div>
+				<!-- <button type="submit">I accept the terms of this agreement.</button> -->
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<label>Date *</label>
+				<div class="form-group">
+					<input type="date" name="Technical[date]" id="date" class="form-control input-lg" placeholder="">
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<label>Choose image *</label>
+				<div class="form-group">
+					<input id="file-input" type="file" name="Technical[image]" />
+				</div>
+			</div>
+		</div>
+		
+			
+			<div class="row">
+				<div class="form_headding"><h3>TECHNICAL INFORMATION</h3></div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<label>Desired Speed of connection</label>
+					<select id="subject" name="Technical[speed]" class="form-control input-lg">
+						<option value="na" selected="">Choose One:</option>
+						<option value="service">KBPA</option>
+						<option value="suggestions">MBPS</option>
+						<option value="product">GB</option>
+						<option value="product">Others</option>
+					</select>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+				 <label>Desired Speed of connection</label>
+					<div class="form-group">
+                        <input type="text" name="address" id="address" class="form-control input-lg" placeholder="(A) Local End">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+				 <label></label>
+					<div class="form-group">
+                        <input type="text" name="address" id="address" class="form-control input-lg" placeholder="(B) Remote End">
+					</div>
+				</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-4 col-md-4">
+					 <label>Description of End Equipment</label>
+						<div class="form-group">
+							<input type="text" name="address" id="address" class="form-control input-lg" placeholder="(B) Remote End">
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4">
+					 <label></label>
+						<div class="form-group">
+							<input type="text" name="address" id="address" class="form-control input-lg" placeholder="(B) Remote End">
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4">
+					 <label>Purpose of Connectivity</label>
+						<div class="form-group">
+							<input type="text" name="Technical[purpose]" id="address" class="form-control input-lg" placeholder="">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				<div class="form_headding"><h3>FOR OFFICIAL USE ONLY</h3></div>
+				
+				<div class="col-xs-12 col-sm-4 col-md-4">
+				 <label>Registration Number</label>
+					<div class="form-group">
+                        <input type="text" name="address" id="address" class="form-control input-lg" placeholder="">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+				 <label>Date</label>
+					<div class="form-group">
+                        <input type="date" name="date" id="date" class="form-control input-lg" placeholder="">
+					</div>
+				</div>
+				</div>
+				<div class="row">
 			<div class="col-xs-12 col-sm-4 col-md-4">
 				<div method="post" action="" class="sigPad">
 					<label>Signature *</label>
@@ -342,9 +436,11 @@
 				</div>
 			</div>
 		</div>
+			
+		
 		<div class="submit_button">
 			<button type="button" class="btn btn-default">Reset</button>
-			<button type="button" class="btn btn-primary">Save</button>
+			<button type="submit" class="btn btn-primary">Save</button>
 		</div>
 		</form>
 	</div>
