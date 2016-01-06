@@ -10,3 +10,8 @@
 <script src="assets/admin/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/admin/dist/js/demo.js"></script>
+<script>
+    $('.confirm').click(function(){
+        return confirm('Are you sure ?');
+    });
+</script>

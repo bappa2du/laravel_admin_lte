@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -15,9 +16,10 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         $input = $request->all();
+//        return $input;
         $credential = [
-            'email'    => $input->email,
-            'password' => $input->password,
+            'email'    => $input['email'],
+            'password' => $input['password'],
         ];
         if (Auth::attempt($credential)) {
             return redirect()->action('AdminController@getIndex');
@@ -59,8 +61,8 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        session_destroy();
-        return redirect()->acrion('WebController@getIndex');
+        Session::flush();
+        return redirect('/');
     }
 
 }
